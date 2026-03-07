@@ -1,8 +1,11 @@
 #### Machine Learning Statistical Models Algorithms from scratch.
 
-A collection of Machine Learning algorithms implemented from scratch using Python with minimal dependencies.
-The goal of this repo is to deeply understand how machine learning algorithms work internally instead of relying on high-level libraries.
+A collection of Machine Learning algorithms implemented from scratch using Python, pandas, numpy and Julia with minimal dependencies.
+
+The goal of this repo is to deeply understand how machine learning algorithms work internally instead of relying on high-level libraries.Scikit-learn (sklearn)
+
 This repository focuses on implementing the mathematics, optimization procedures, and evaluation metrics manually while using numerical tools like NumPy and data handling tools like pandas.
+
 Most machine learning practitioners use high-level libraries such as scikit-learn. While these tools are extremely powerful, they often hide the internal mechanics of algorithms.
 
  This repo aims to:
