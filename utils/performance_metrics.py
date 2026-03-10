@@ -19,4 +19,13 @@ def r2_score(y_true, y_pred):
     r2 = 1 - (ss_residual / ss_total)
     return r2
 
+#adjusted r2_score ---> 1 - ((1 - r2) * (n -1) / (n - p -1))
+#n ---> number of datapoints
+#p-----> Number of independent features
+def adjusted_r2_score(y_true, y_pred, p):
+    n = len(y_true)
+    r2 = r2_score(y_true, y_pred)
+    adj_r2 = 1 - ((1 - r2) * (n - 1) / (n - p -1))
+    return adj_r2
+
     
