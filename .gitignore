@@ -1,5 +1,12 @@
-#environment variables
-.venv
+# Python cache files
+__pycache__/
+*.pyc
 
-#pyhton files
-__p
+# Virtual environments
+.venv/
+venv/
+
+# Python build files
+*.pyo
+*.pyd
+
