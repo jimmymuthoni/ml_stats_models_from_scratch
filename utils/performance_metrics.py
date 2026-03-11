@@ -28,4 +28,12 @@ def adjusted_r2_score(y_true, y_pred, p):
     adj_r2 = 1 - ((1 - r2) * (n - 1) / (n - p -1))
     return adj_r2
 
+## Ridge regression loss function:(1/n) Xᵀ(y_pred - y) + 2λw
+def ridge_regression(y_true, y_pred, m, lam):
+    mse = np.mean((y_true - y_pred) **2)
+    ridge = lam * np.sum(m **2)
+    return mse + ridge
+
+
+
     
