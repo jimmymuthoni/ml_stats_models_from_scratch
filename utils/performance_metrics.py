@@ -34,6 +34,35 @@ def ridge_regression(y_true, y_pred, m, lam):
     ridge = lam * np.sum(m **2)
     return mse + ridge
 
+##Classification perfomance metrics
+#accuracy score: --> proportion of the correct predictions
+def accuracy_score(y_true, y_pred):
+    correct = np.sum(y_true == y_pred)
+    return correct / len(y_true)
 
+#precision: ---> Out of predicted positive how many are correct
+def precision_score(y_true, y_pred):
+    tp = np.sum((y_true == 1) & (y_pred == 1))
+    fp = np.sum((y_true == 0) & (y_pred == 1))
+    return tp / (tp + fp)
 
-    
+#Recall: --> Out of actuall positive how many did we detect
+def recall_score(y_true, y_pred):
+    tp = np.sum((y_true == 1) & (y_pred == 1))
+    fn = np.sum((y_true == 1) & (y_pred == 0))
+    return tp / (tp + fn)
+
+#F1 Score: ---> balances precision and recall
+def f1_score(y_true, y_pred):
+    precision = precision_score(y_true, y_pred)
+    recall = recall_score(y_true, y_pred)
+    return 2 * (precision * recall) / (precision + recall)
+
+#confusion matrix implementation
+def confusion_matrix(y_true, y_pred):
+    tp = np.sum((y_true == 1) & (y_pred == 1))
+    tn = np.sum((y_true == 0) & (y_pred == 0))
+    fp = np.sum((y_true == 0) & (y_pred == 1))
+    fn = np.sum((y_true == 1) & (y_pred == 0))
+    return np.array([[tp, fp],
+                     [fn, tn]])
